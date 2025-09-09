@@ -1,5 +1,5 @@
 import { ExternalLink, Github, Calendar } from 'lucide-react';
-import project1 from '@/assets/project1.jpg';
+import project1 from '@/assets/proj 1.png';
 import project2 from '@/assets/project2.jpg';
 import project3 from '@/assets/project3.jpg';
 
@@ -7,13 +7,14 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Mobile App',
-      description: 'A modern shopping app with seamless user experience and advanced features.',
+      title: 'E-Commerce Web Application',
+      description: 'A modern shopping Website with seamless user experience and advanced features.',
       image: project1,
-      category: 'Mobile App',
+      category: 'Web Application',
       technologies: ['React Native', 'Node.js', 'MongoDB'],
       year: '2024',
-      client: 'RetailCo'
+      client: '',
+      link: 'https://tab-tawny.vercel.app/'   // ✅ Vercel link added
     },
     {
       id: 2,
@@ -117,9 +118,16 @@ const Portfolio = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <button className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center text-white hover:bg-white/30 transition-colors">
-                      <ExternalLink className="w-4 h-4" />
-                    </button>
+                    {project.link && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    )}
                     <button className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center text-white hover:bg-white/30 transition-colors">
                       <Github className="w-4 h-4" />
                     </button>
