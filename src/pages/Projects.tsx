@@ -1,5 +1,5 @@
-import { ArrowRight, Star, Clock, Users, TrendingUp } from 'lucide-react';
-import project1 from '@/assets/project1.jpg';
+import { ArrowRight, Star } from 'lucide-react';
+import project1 from '@/assets/proj 1.png';
 import project2 from '@/assets/project2.jpg';
 import project3 from '@/assets/project3.jpg';
 
@@ -7,30 +7,22 @@ const Projects = () => {
   const featuredProjects = [
     {
       id: 1,
-      title: 'ShopEase Mobile Commerce',
+      title: 'E-Commerce Web Site',
       subtitle: 'Revolutionary Shopping Experience',
-      description: 'A comprehensive e-commerce mobile application that transformed online shopping for over 100,000 users. Features include AI-powered product recommendations, seamless payment integration, and real-time inventory management.',
+      description:
+        'A comprehensive e-commerce mobile application that transformed online shopping for over 100,000 users. Features include AI-powered product recommendations, seamless payment integration, and real-time inventory management.',
       image: project1,
-      client: 'RetailCorp Inc.',
-      duration: '6 months',
-      team: '8 developers',
-      results: [
-        '300% increase in mobile conversions',
-        '45% reduction in cart abandonment',
-        '4.8/5 app store rating'
-      ],
-      technologies: ['React Native', 'Node.js', 'MongoDB', 'Stripe', 'AWS'],
-      testimonial: {
-        text: "DevCraft delivered beyond our expectations. The app's performance and user experience are exceptional.",
-        author: 'Sarah Johnson',
-        role: 'CTO, RetailCorp'
-      }
+      liveLink: 'https://tab-tawny.vercel.app/', // 🔥 Vercel link added
+      results: [],
+      technologies: ['React Native', 'Node.js', 'MongoDB', 'Express ', 'Postman'],
+      testimonial: {}
     },
     {
       id: 2,
       title: 'DataViz Analytics Platform',
       subtitle: 'Business Intelligence Redefined',
-      description: 'A powerful analytics dashboard that processes millions of data points to provide actionable business insights. Built with modern web technologies to ensure fast performance and intuitive data visualization.',
+      description:
+        'A powerful analytics dashboard that processes millions of data points to provide actionable business insights. Built with modern web technologies to ensure fast performance and intuitive data visualization.',
       image: project2,
       client: 'DataTech Solutions',
       duration: '8 months',
@@ -51,7 +43,8 @@ const Projects = () => {
       id: 3,
       title: 'SecureBank Mobile',
       subtitle: 'Next-Generation Banking',
-      description: 'A cutting-edge mobile banking application with bank-grade security, biometric authentication, and advanced financial management tools. Serving over 50,000 active users with zero security incidents.',
+      description:
+        'A cutting-edge mobile banking application with bank-grade security, biometric authentication, and advanced financial management tools. Serving over 50,000 active users with zero security incidents.',
       image: project3,
       client: 'First National Bank',
       duration: '10 months',
@@ -76,10 +69,17 @@ const Projects = () => {
       <section className="section-padding pt-32 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 animate-fade-in-up">
-            Featured <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Projects</span>
+            Featured{' '}
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Projects
+            </span>
           </h1>
-          <p className="text-xl text-muted-foreground mb-12 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-            Dive deep into our most successful projects and discover the impact we've made for our clients.
+          <p
+            className="text-xl text-muted-foreground mb-12 animate-fade-in-up"
+            style={{ animationDelay: '0.1s' }}
+          >
+            Dive deep into our most successful projects and discover the impact we've made for our
+            clients.
           </p>
         </div>
       </section>
@@ -95,42 +95,15 @@ const Projects = () => {
                   <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                     {project.title}
                   </h2>
-                  <h3 className="text-xl text-primary font-semibold mb-6">
-                    {project.subtitle}
-                  </h3>
+                  <h3 className="text-xl text-primary font-semibold mb-6">{project.subtitle}</h3>
                   <p className="text-muted-foreground text-lg leading-relaxed">
                     {project.description}
                   </p>
                 </div>
 
-                {/* Project Stats */}
-                <div className="grid grid-cols-3 gap-6">
-                  <div className="flex items-center space-x-2">
-                    <Clock className="w-5 h-5 text-primary" />
-                    <div>
-                      <div className="text-sm text-muted-foreground">Duration</div>
-                      <div className="font-semibold text-foreground">{project.duration}</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Users className="w-5 h-5 text-primary" />
-                    <div>
-                      <div className="text-sm text-muted-foreground">Team Size</div>
-                      <div className="font-semibold text-foreground">{project.team}</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <TrendingUp className="w-5 h-5 text-primary" />
-                    <div>
-                      <div className="text-sm text-muted-foreground">Client</div>
-                      <div className="font-semibold text-foreground">{project.client}</div>
-                    </div>
-                  </div>
-                </div>
-
                 {/* Results */}
                 <div>
-                  <h4 className="text-lg font-semibold text-foreground mb-4">Key Results</h4>
+                  <h4 className="text-lg font-semibold text-foreground mb-4"></h4>
                   <ul className="space-y-2">
                     {project.results.map((result, resultIndex) => (
                       <li key={resultIndex} className="flex items-center space-x-3">
@@ -157,18 +130,30 @@ const Projects = () => {
                 </div>
 
                 {/* Testimonial */}
-                <div className="p-6 bg-muted/50 rounded-2xl border border-border">
-                  <p className="text-muted-foreground italic mb-4">"{project.testimonial.text}"</p>
-                  <div>
-                    <div className="font-semibold text-foreground">{project.testimonial.author}</div>
-                    <div className="text-sm text-muted-foreground">{project.testimonial.role}</div>
+                {project.testimonial.text && (
+                  <div className="p-6 bg-muted/50 rounded-2xl border border-border">
+                    <p className="text-muted-foreground italic mb-4">
+                      "{project.testimonial.text}"
+                    </p>
+                    <div>
+                      <div className="font-semibold text-foreground">{project.testimonial.author}</div>
+                      <div className="text-sm text-muted-foreground">{project.testimonial.role}</div>
+                    </div>
                   </div>
-                </div>
+                )}
 
-                <button className="btn-hero inline-flex items-center space-x-2">
-                  <span>View Case Study</span>
-                  <ArrowRight className="w-5 h-5" />
-                </button>
+                {/* Live Demo Button */}
+                {project.liveLink && (
+                  <a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-hero inline-flex items-center space-x-2"
+                  >
+                    <span>Live Demo</span>
+                    <ArrowRight className="w-5 h-5" />
+                  </a>
+                )}
               </div>
 
               {/* Image */}
@@ -194,7 +179,8 @@ const Projects = () => {
             Ready to Start Your Project?
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Let's discuss how we can help bring your vision to life with our proven development process.
+            Let's discuss how we can help bring your vision to life with our proven development
+            process.
           </p>
           <button className="btn-hero inline-flex items-center space-x-2">
             <span>Get Started Today</span>
