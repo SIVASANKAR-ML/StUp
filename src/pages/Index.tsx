@@ -1,7 +1,7 @@
-import { ArrowRight, Smartphone, Globe, Settings, Star, Users, CheckCircle } from 'lucide-react';
+import { ArrowRight, Smartphone, Globe, Settings, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import heroImage from '@/assets/hero-image.jpg';
-import project1 from '@/assets/project1.jpg';
+import project1 from '@/assets/proj 1.png';
 import project2 from '@/assets/project2.jpg';
 import project3 from '@/assets/project3.jpg';
 
@@ -9,7 +9,7 @@ const Index = () => {
   const services = [
     {
       icon: Smartphone,
-      title: 'Mobile App Development',
+      title: 'Website Development',
       description: 'Native iOS and Android apps that deliver exceptional user experiences.',
     },
     {
@@ -47,9 +47,10 @@ const Index = () => {
 
   const featuredProjects = [
     {
-      title: 'E-Commerce App',
-      category: 'Mobile Development',
+      title: 'E-Commerce Website',
+      category: 'Web Development',
       image: project1,
+      link: 'https://tab-tawny.vercel.app/', // 🔗 Added Vercel link
     },
     {
       title: 'Analytics Dashboard',
@@ -164,6 +165,16 @@ const Index = () => {
                 <h3 className="text-xl font-semibold text-foreground mt-4">
                   {project.title}
                 </h3>
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-block btn-secondary"
+                  >
+                    View Live Demo
+                  </a>
+                )}
               </div>
             ))}
           </div>
