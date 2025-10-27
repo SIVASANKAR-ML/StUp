@@ -2,6 +2,7 @@ import { ExternalLink, Github, Calendar } from 'lucide-react';
 import project1 from '@/assets/proj 1.png';
 import project2 from '@/assets/project2.jpg';
 import project3 from '@/assets/project3.jpg';
+import pro4 from '@/assets/pro4.png';
 
 const Portfolio = () => {
   const projects = [
@@ -40,7 +41,7 @@ const Portfolio = () => {
       id: 4,
       title: 'Healthcare Platform',
       description: 'Telemedicine platform connecting patients with healthcare providers.',
-      image: project1,
+      image: pro4,
       category: 'Web Application',
       technologies: ['Next.js', 'PostgreSQL', 'AWS'],
       year: '2023',
